@@ -17,10 +17,10 @@ export function getBound( geojson : GeoJsonObject  ) {
     coordinatesEach(geojson, ( coord )=>{
         valid = true;
         maxX = Math.max(coord[0], maxX);
-        minX = Math.max(coord[0], minX);
+        minX = Math.min(coord[0], minX);
 
         maxY = Math.max(coord[1], maxY);
-        minY = Math.max(coord[1], minY);
+        minY = Math.min(coord[1], minY);
     })
 
     if(valid) {
