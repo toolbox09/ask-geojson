@@ -14,7 +14,7 @@ export class Bound {
         this.maxY = maxY;
     }
 
-    public getWest() {
+    public getSouth() {
         return this.minY;
     }
 
@@ -22,7 +22,7 @@ export class Bound {
         return this.maxY;
     }
 
-    public getSouth() {
+    public getWest() {
         return this.minX;
     }
 
