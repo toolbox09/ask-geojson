@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      ask-es:
+        specifier: ^0.0.2
+        version: 0.0.2
     devDependencies:
       '@types/geojson':
         specifier: ^7946.0.14
@@ -20,6 +24,9 @@ packages:
   '@types/geojson@7946.0.14':
     resolution: {integrity: sha512-WCfD5Ht3ZesJUsONdhvm84dmzWOiOzOAqOncN0++w0lBw1o8OuDNJF2McvvCef/yBqb/HYRahp1BYtODFQ8bRg==}
 
+  ask-es@0.0.2:
+    resolution: {integrity: sha512-2OOCx4iPS31gQlAInOwifQtpLRCPMFb2sq/CRDgsFT5HaWD2zZM8eisGmOyzQkDpaDj+jUwz5cysIGBRnm+7lQ==}
+
   typescript@5.5.4:
     resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
     engines: {node: '>=14.17'}
@@ -28,5 +35,7 @@ packages:
 snapshots:
 
   '@types/geojson@7946.0.14': {}
+
+  ask-es@0.0.2: {}
 
   typescript@5.5.4: {}

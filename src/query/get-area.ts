@@ -1,4 +1,6 @@
-import { Geometry, Position } from 'geojson';
+import { Geometry, Position, GeoJsonObject } from 'geojson';
+import { geometryEach } from '../internal';
+import { sumBy } from 'ask-es';
 
 function ofRingSigned( ring : Position[] ) {
     if (ring.length < 3) {
@@ -34,6 +36,15 @@ function ofRings(rings : Position[][]) {
 function ofGeometry( geom : Geometry ) {
     switch( geom.type ) {
         case 'Polygon' : return ofRings(geom.coordinates);
-        case 'MultiPolygon' : return 
+        case 'MultiPolygon' : return sumBy( geom.coordinates, _ => ofRings(_));
+        default : return 0;
     }
+}
+
+export function getArea( geojson : GeoJsonObject ) {
+    let area = 0;
+    geometryEach( geojson, geom => {
+        area += ofGeometry(geom);
+    })
+    return area;
 }

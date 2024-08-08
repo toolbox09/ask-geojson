@@ -1,18 +1,20 @@
 {
   "name": "ask-geojson",
-  "version": "0.0.0",
+  "version": "0.1.2",
   "repository": "https://github.com/toolbox09/ask-geojson.git",
   "author": "lee sang hun",
   "license": "MIT",
-
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "cmd /c buildreset.bat && tsc",
-    "npm": "pnpm version patch && pnpm build && npm publish"
+    "npm": "pnpm build && pnpm version patch && npm publish"
   },
   "devDependencies": {
     "@types/geojson": "^7946.0.14",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "ask-es": "^0.0.2"
   }
 }
