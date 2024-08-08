@@ -23,5 +23,7 @@ export function getBound( geojson : GeoJsonObject  ) {
         minY = Math.max(coord[1], minY);
     })
 
-    return valid && new Bound(minX, maxX, minY, maxY);
+    if(valid) {
+        return new Bound(minX, maxX, minY, maxY);
+    }
 }
