@@ -1,4 +1,4 @@
-import { Coordinate } from '../internal';
+import { Coordinate, LatLng } from '../internal';
 
 export class Bound {
 
@@ -7,42 +7,13 @@ export class Bound {
     public minY : number;
     public maxY : number;
 
+    get sw() { return new LatLng( this.minY, this.minX ); }
+    get ne() { return new LatLng( this.maxY, this.maxX ); }
+
     public constructor(minX : number, maxX : number, minY : number, maxY : number) {
         this.minX = minX;
         this.maxX = maxX;
         this.minY = minY;
         this.maxY = maxY;
-    }
-
-    public getSouth() {
-        return this.minY;
-    }
-
-    public getNorth() {
-        return this.maxY;
-    }
-
-    public getWest() {
-        return this.minX;
-    }
-
-    public getEast() {
-        return this.maxX;
-    }
-
-    public getSouthWest(){
-        return new Coordinate(this.getSouth(),this.getWest() ); 
-    }
-
-    public getNorthEast() {
-        return new Coordinate(this.getNorth(),this.getEast() );
-    }
-
-    public getNorthWest(){
-        return new Coordinate(this.getNorth(),this.getWest() ); 
-    }
-
-    public getSouthEast() {
-        return new Coordinate(this.getSouth(),this.getEast() );
     }
 }
